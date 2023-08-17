@@ -1,5 +1,31 @@
 
+@include('partials._header')
 
+<nav style="text-align: right">
+    <div>
+        <a href="/">
+        <span>
+            Student System
+        </span>
+        </a>
+    </div>
+    <div id="navbar-main">
+        <li>
+            <a href="/login">Sign in</a>
+        </li>
+        <li>
+            <a href="/register">Sign Up</a>
+        </li>
+        <li>
+            <form action="/logout" method="POST">
+                @csrf
+            <button>Logout</button>
+        </form>
+        </li>
+    </div>
+</nav>
+
+<x-message />
 
 
 <header>
@@ -9,10 +35,10 @@
     </a>
 </header>
 
-<section>
-    <div>
-        <table>
-            <thead>
+<section >
+    <div > 
+        <table >
+            <thead style="text-align: center">
                 <tr>
                     <th>
                         First Name
@@ -53,7 +79,4 @@
    
 
 @include('partials.footer')
- {{-- @foreach ($students as $student)
-       <li>{{ $student->first_name }} {{ $student->last_name }}</li>
-       
-    @endforeach --}}
+    
