@@ -57,9 +57,9 @@ use App\Http\Controllers\UserController;
 // });
 
 Route::get('/',[StudentController::class, 'index']);
-    
+Route::get('/login',[UserController::class, 'create']);
 
-    Route::get('/user', [UserController::class, 'index']);
-    Route::get('/student/{id}', [UserController::class, 'show']);
+    // Route::get('/user', [UserController::class, 'index']);
+    // Route::get('/student/{id}', [UserController::class, 'show']);
 
 
