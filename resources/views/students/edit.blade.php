@@ -63,6 +63,11 @@
              <button type="submit">Update</button>
             </div>
         </form>
+        <form action="/student/{{$student->id}}" method="POST">
+            @csrf
+            @method ('delete')
+            <div><button type="submit">Delete</button></div>
+          </form>
     </section>
 </main>
 

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class StudentController extends Controller
 {
+
     public function index(){
         $data = array("students" => DB::table('students')->orderBy('created_at', 'desc')->simplePaginate(10));
         return view ('students.index', $data);
@@ -56,5 +57,10 @@ class StudentController extends Controller
         $student->update($validated);
         return back()->with('message', 'Data updated');
 
+    }
+
+    public function destroy(Students $student){
+     $student->delete();
+     return redirect('/')->with('message', 'Data Deleted');
     }
 }

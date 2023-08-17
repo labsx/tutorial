@@ -71,6 +71,7 @@ Route::post('/add/student',[StudentController::class, 'store']);
 
 Route::get('/student/{student}',[StudentController::class, 'show']);
 Route::put('/student/{student}',[StudentController::class, 'update']);// where you can edit data
+Route::delete('/student/{student}',[StudentController::class, 'destroy']);
 
 
 
