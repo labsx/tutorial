@@ -56,8 +56,9 @@ use App\Http\Controllers\UserController;
 //     return response()->download($path, $name, $header);
 // });
 
-Route::get('/',[StudentController::class, 'index']);
-Route::get('/login',[UserController::class, 'login']);
+Route::get('/',[StudentController::class, 'index'])->middleware('auth');
+
+Route::get('/login',[UserController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login/process',[UserController::class, 'process']);
 
 Route::get('/register',[UserController::class, 'register']);

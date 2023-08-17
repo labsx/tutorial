@@ -1,4 +1,8 @@
+
 @if (session()->has('message'))
-    <h1>{{session('message')}}</h1>
-    
-@endif
+
+<div class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    {{session('message')}}
+  </div> 
+  @endif

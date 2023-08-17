@@ -17,10 +17,11 @@ class UserController extends Controller
             "password" => ['required'],
         ]);
         if(auth()->attempt($validated))
-        $request->session()->regenerateToken();
+        $request->session()->regenerate();
         return redirect('/')->with('message', 'Welcome back !');  
 
     }
+
 
     public function logout(Request $request){
         auth()->logout();
@@ -32,13 +33,13 @@ class UserController extends Controller
     }
 
     public function store(Request $request){
+        
         $validated = $request->validate([
             "name" => ['required', 'min:4'],
             "email" =>['required','email', Rule::unique('users', 'email')] ,
             "password" => ['required', 'min:8', 'max: 50'],
         ]);
         $valdiate['password']=bcrypt($validated['password']);
-
         $user = User::create($validated);
         auth()->login($user);   
        
