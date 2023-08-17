@@ -69,6 +69,10 @@ Route::post('/logout',[UserController::class, 'logout']);
 Route::get('/add/student',[StudentController::class, 'create']);
 Route::post('/add/student',[StudentController::class, 'store']);
 
+Route::get('/student/{student}',[StudentController::class, 'show']);
+Route::put('/student/{student}',[StudentController::class, 'update']);// where you can edit data
+
+
 
 
 

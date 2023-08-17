@@ -39,12 +39,12 @@
 
 <header>
     <a href="">
-        <h1 style="text-align: center">Student List</h1>
+        <h1 >Student List</h1>
 
     </a>
 </header>
 
-<section >
+<section>
     <div > 
         <table >
             <thead style="text-align: center">
@@ -60,6 +60,9 @@
                     </th>
                     <th>
                         age
+                    </th>
+                    <th>
+
                     </th>
                 </tr>
             </thead>
@@ -77,6 +80,9 @@
                     </td>
                     <td>
                         {{ $student->age }} 
+                    </td>
+                    <td>
+                        <a href="/student/{{$student->id}}">view</a>
                     </td>
 
                 </tr>
