@@ -10,18 +10,27 @@
         </a>
     </div>
     <div id="navbar-main">
+        @auth
         <li>
-            <a href="/login">Sign in</a>
-        </li>
-        <li>
-            <a href="/register">Sign Up</a>
-        </li>
-        <li>
+
+            <li>
+                <a href="/add/student">Add New</a>
+            </li>            
             <form action="/logout" method="POST">
                 @csrf
             <button>Logout</button>
         </form>
+      
+        @else
+        <li>
+            <a href="/register">Sign Up</a>
         </li>
+    </li>
+    <li>
+        <a href="/login">Sign in</a>
+    </li>
+        
+        @endauth
     </div>
 </nav>
 
@@ -74,6 +83,7 @@
                 @endforeach 
             </tbody>
         </table>
+        {{$students->links()}}
     </div>
 </section>
    
